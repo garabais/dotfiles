@@ -5,3 +5,5 @@
 
 - clean: ['~', '~/.config']
 
+- link:
+    ~/.config/xmonad: xmonad
