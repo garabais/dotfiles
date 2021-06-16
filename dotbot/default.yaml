@@ -19,6 +19,7 @@
     ~/.config/fish: fish
     ~/.config/gtk-3.0: theme/gtk
     ~/.local/share/fonts: fonts
+    ~/.local/bin: bin
     ~/.icons: theme/icons
     ~/.gtkrc-2.0: theme/gtk/gtk-2
     ~/.bashrc: bash/bashrc

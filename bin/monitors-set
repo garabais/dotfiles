@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+xrandr -q | grep -q eDP-1
+
+if [[ $? -eq 0 ]]; then
+	hdmi=HDMI-1
+	lap=eDP-1
+else
+	hdmi=HDMI-1-1
+	lap=eDP-1-1
+fi
+
+xrandr -q | grep -q "$hdmi connected"
+
+# laptop display mode set manually because it can't change.
+if [[ $? -eq 0 ]]; then
+	xrandr --output $lap --mode 1366x768 --pos 0x312 --output $hdmi --auto --primary --pos 1366x0
+else
+	xrandr --output $lap --mode 1366x768 --primary
+fi

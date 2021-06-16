@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -e
+
+surfshark-vpn $@
+
+if [[ $# -eq 0 || ($1 == attack || $1 == multi) ]]; then
+	sysctl -q -w net.ipv6.conf.all.disable_ipv6=1
+	echo "ipv6 disabled"
+elif [[ $1 == down ]]; then
+	sysctl -q -w net.ipv6.conf.all.disable_ipv6=0
+	echo "ipv6 enabled"
+fi

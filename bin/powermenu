@@ -1,0 +1,59 @@
+#!/bin/bash
+
+rofi_command="rofi"
+
+#### Options ###
+power_off=" Power off"
+reboot="勒 Reboot"
+lock=" Lock"
+suspend="鈴 Suspend"
+log_out="﫼 Log out"
+
+# Confirmation
+confirm_exit() {
+	echo -e "No\nYes" | rofi -dmenu -i -only-match -p "Are You Sure?"
+}
+
+# Variable passed to rofi
+options="$lock\n$power_off\n$reboot\n$suspend\n$log_out"
+
+chosen="$(echo -e "$options" | $rofi_command -dmenu -i -p "Select" -selected-row 0)"
+case $chosen in
+    $lock)
+		multilockscreen --lock dim
+		exit 0
+        ;;    
+    $power_off)
+		ans=$(confirm_exit &)
+
+		if [[ $ans == "Yes" ]]; then
+			systemctl poweroff
+		fi
+		exit 0
+        ;;
+    $reboot)
+		ans=$(confirm_exit &)
+
+		if [[ $ans == "Yes" ]]; then
+			systemctl reboot
+		fi
+		exit 0
+        ;;
+    $suspend)
+		ans=$(confirm_exit &)
+
+		if [[ $ans == "Yes" ]]; then
+			systemctl suspend
+		fi
+		exit 0
+        ;;
+    $log_out)
+		ans=$(confirm_exit &)
+
+		if [[ $ans == "Yes" ]]; then
+			bspc quit
+		fi
+		exit 0
+        ;;
+esac
+
