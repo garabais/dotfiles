@@ -11,4 +11,6 @@
     ~/.config/bottom: bottom
     ~/.config/gh: gh
     ~/.config/git: git
+    ~/.config/gtk-3.0: gtk
+    ~/.gtkrc-2.0: gtk/gtk-2
     ~/.zshrc: zsh/.zshrc
