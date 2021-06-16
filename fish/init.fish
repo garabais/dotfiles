@@ -24,7 +24,6 @@ set -u fish_pager_color_description cyan
 set -U fish_color_match --background =blue
 
 set -u fish_pager_color_progress white --background=blue
-set --universal fzf_fish_custom_keybindings
 
 if not test -e $__fish_config_dir/functions/fisher.fish
 	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
