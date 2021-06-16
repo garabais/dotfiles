@@ -6,7 +6,6 @@
 - clean: ['~', '~/.config']
 
 - link:
-    ~/.config/xmonad: xmonad
     ~/.config/polybar: polybar
     ~/.config/dunst: dunst
     ~/.config/bottom: bottom
