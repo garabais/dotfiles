@@ -7,6 +7,7 @@
 
 - link:
     ~/.config/xmonad: xmonad
+    ~/.config/polybar: polybar
     ~/.config/dunst: dunst
     ~/.config/bottom: bottom
     ~/.config/gh: gh
