@@ -21,7 +21,6 @@
     ~/.local/share/fonts: fonts
     ~/.icons: theme/icons
     ~/.gtkrc-2.0: theme/gtk/gtk-2
-    ~/.zshrc: zsh/.zshrc
     ~/.xsession: xorg/xsession
     ~/.tmux.conf: tmux/tmux.conf
 
