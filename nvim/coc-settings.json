@@ -1,5 +1,0 @@
-{
-    "suggest.echodocSupport": true,
-	"go.goplsArgs": ["-remote=auto", "-logfile", "/tmp/gopls.log"],
-	"go.goplsPath": "/home/garabais/.local/share/go/bin/gopls"
-}
