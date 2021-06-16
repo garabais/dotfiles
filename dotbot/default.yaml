@@ -8,3 +8,4 @@
 - link:
     ~/.config/xmonad: xmonad
     ~/.config/dunst: dunst
+    ~/.config/bottom: bottom
