@@ -1,0 +1,12 @@
+
+# Change Caps lock to escape keeping Caps lock funcionality whit shift
+# setxkbmap -option caps:escape_shifted_capslock
+
+# Set the default cursor for the xsession
+xsetroot -cursor_name left_ptr
+
+# Disable sound bell
+xset -b
+
+# Enable lockscreen
+xss-lock -l -- multilockscreen --lock dim &
