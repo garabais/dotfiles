@@ -14,6 +14,7 @@
     ~/.config/git: git
     ~/.config/nvim: nvim
     ~/.config/paru: paru
+    ~/.config/alacritty: alacritty
     ~/.config/picom: picom
     ~/.config/rofi: rofi
     ~/.config/fish: fish
