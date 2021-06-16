@@ -1,0 +1,58 @@
+* {
+	background-color: #00000000;
+	text-color: @foreground-list;
+	spacing: 15px;
+	font: "Overpass 20";
+
+
+	// Color Scheme
+	accent:					#7B8281;
+	background:				#0C1416dd;
+	background-light:		#7B8281;
+	background-light-alpha: #cac4bd11;
+	background-focus:		#0C1416;
+	foreground:				#cac4bd;
+	foreground-list:		#0C1416;
+	on:						#44ad4d;
+	off:					#e34039;
+
+
+  text-color: @background-light;
+}
+
+#window {
+	fullscreen:       true;
+	background-color: @background;
+}
+
+#mainbox {
+	padding: 30%;
+}
+
+#inputbar {
+  children: [ prompt, textbox-prompt-colon, entry ];
+  spacing: 10px;
+}
+
+#textbox-prompt-colon {
+  expand: false;
+  str: ":";
+}
+
+#element-icon { 
+	margin: 0 0 0 30px ;
+	size: 1.1em;
+}
+
+#element {
+  text-color: @foreground;
+  spacing: 10px;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+#element.selected {
+  text-color: @background-light;
+  background-color: @background-light-alpha;
+}
+
