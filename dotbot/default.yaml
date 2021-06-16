@@ -12,6 +12,7 @@
     ~/.config/gh: gh
     ~/.config/git: git
     ~/.config/nvim: nvim
+    ~/.config/paru: paru
     ~/.config/gtk-3.0: gtk
     ~/.gtkrc-2.0: gtk/gtk-2
     ~/.zshrc: zsh/.zshrc
