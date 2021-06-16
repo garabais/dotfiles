@@ -9,4 +9,5 @@
     ~/.config/xmonad: xmonad
     ~/.config/dunst: dunst
     ~/.config/bottom: bottom
+    ~/.config/gh: gh
     ~/.zshrc: zsh/.zshrc
