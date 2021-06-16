@@ -16,6 +16,7 @@
     ~/.config/paru: paru
     ~/.config/picom: picom
     ~/.config/rofi: rofi
+    ~/.config/fish: fish
     ~/.config/gtk-3.0: theme/gtk
     ~/.local/share/fonts: fonts
     ~/.icons: theme/icons
@@ -23,3 +24,6 @@
     ~/.zshrc: zsh/.zshrc
     ~/.xsession: xorg/xsession
     ~/.tmux.conf: tmux/tmux.conf
+
+- shell:
+  - [fish ~/.config/fish/init.fish, Setting up fish]
