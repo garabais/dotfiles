@@ -10,4 +10,5 @@
     ~/.config/dunst: dunst
     ~/.config/bottom: bottom
     ~/.config/gh: gh
+    ~/.config/git: git
     ~/.zshrc: zsh/.zshrc
