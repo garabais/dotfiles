@@ -2,7 +2,7 @@
 	background-color: #00000000;
 	text-color: @foreground-list;
 	spacing: 15px;
-	font: "Overpass 20";
+	font: "Noto Sans 20";
 
 
 	// Color Scheme
@@ -36,7 +36,12 @@
 
 #textbox-prompt-colon {
   expand: false;
-  str: ":";
+  /* str: ":"; */
+}
+
+prompt {
+	margin: 0 0.5em 0 0.1em;
+	vertical-align: 0.5;
 }
 
 #element-icon { 
