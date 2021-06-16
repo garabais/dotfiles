@@ -15,6 +15,7 @@
     ~/.config/nvim: nvim
     ~/.config/paru: paru
     ~/.config/bspwm: bspwm
+    ~/.config/sxhkd: sxhkd
     ~/.config/alacritty: alacritty
     ~/.config/picom: picom
     ~/.config/rofi: rofi
