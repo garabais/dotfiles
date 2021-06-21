@@ -186,7 +186,8 @@
 	nnoremap <silent> g* g*zz
 
 	" Quick-save
-	nmap <Leader>w :w<CR>
+	nmap <C-s> :w<CR>
+	imap <C-s> <Esc>:w<CR>a
 
 	" Orthography
 	nmap <leader>oo :setlocal spell!<CR>
