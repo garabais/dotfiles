@@ -68,6 +68,10 @@
 	hi GitGutterChange ctermbg=NONE guibg=NONE
 	hi GitGutterChangeDelete ctermbg=NONE guibg=NONE
 	hi GitGutterDelete ctermbg=NONE guibg=NONE
+	hi LspDiagnosticsDefaultError guifg=#ff5370
+	hi LspDiagnosticsDefaultWarning guifg=#ffcb6b
+	hi LspDiagnosticsDefaultHint guifg=#89ddff
+	hi LspDiagnosticsDefaultInformation guifg=#b2ccd6
 	" hi foldColumn ctermbg=NONE guibg=NONE
 	" hi diffAdd ctermbg=NONE guibg=NONE
 	hi clear ModeMsg
@@ -81,7 +85,6 @@
 	lua require('treesitter-config')
 	lua require('telescope-config')
 	lua require('compe-config')
-	" lua require('devicons-config')
 	lua require('galaxyline-config')
 	lua require('gitsigns-config')
 

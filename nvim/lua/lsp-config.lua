@@ -22,12 +22,12 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<Leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap('n', '<Leader>co', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 
   -- Set some keybinds conditional on server capabilities
   if client.resolved_capabilities.document_formatting then
     buf_set_keymap("n", "<Leader>F", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
     buf_set_keymap("n", "F", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-    -- buf_set_keymap("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 	-- autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
   elseif client.resolved_capabilities.document_range_formatting then
     buf_set_keymap("n", "<Leader>F", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
@@ -50,10 +50,35 @@ local on_attach = function(client, bufnr)
   end
 end
 
+-- Ovveride default to with global configurations for all the lsp
+nvim_lsp.util.default_config = vim.tbl_extend(
+  "force",
+  nvim_lsp.util.default_config,
+  { 
+		on_attach = on_attach,
+		handlers = {
+			['textDocument/publishDiagnostics'] = vim.lsp.with(
+					vim.lsp.diagnostic.on_publish_diagnostics, {
+					-- Enable virtual_text
+					-- virtual_text = {spacing = 1},
+					virtual_text = false,
+					signs = true,
+					update_in_insert = true,
+					severity_sort = true,
+				}
+			),
+		}
+  }
+)
 
 -- Use a loop to conveniently both setup defined servers 
 -- and map buffer local keybindings when the language server attaches
 local servers = { "gopls", "rust_analyzer" }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
+  nvim_lsp[lsp].setup {}
 end
+
+vim.fn.sign_define("LspDiagnosticsSignError", {text = ""})
+vim.fn.sign_define("LspDiagnosticsSignWarning", {text = ""})
+vim.fn.sign_define("LspDiagnosticsSignHint", {text = ""})
+vim.fn.sign_define("LspDiagnosticsSignInformation", {text = ""})

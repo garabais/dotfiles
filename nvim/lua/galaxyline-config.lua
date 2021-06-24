@@ -24,10 +24,11 @@ local colors = {
 	grey = '#848586',
 	middlegrey = '#8791A5',
 	string_orange = '#CE9178',
-	vivid_blue = '#4FC1FF',
+	vivid_blue = '#89ddff',
+	vivid_white = '#b2ccd6',
 	light_blue = '#9CDCFE',
-	error_red = '#F44747',
-	info_yellow = '#FFCC66',
+	error_red = '#ff5370',
+	info_yellow = '#FFCB6B',
 	white = '#FFFFFF'
 }
 
@@ -127,7 +128,7 @@ gls.left[3] = {
 gls.left[4] = {
     DiagnosticError = {
 		provider = 'DiagnosticError', 
-		icon = '  ', 
+		icon = ' ', 
 		highlight = {colors.error_red, colors.bg}
 	}
 }
@@ -135,7 +136,7 @@ gls.left[4] = {
 gls.left[5] = {
 	DiagnosticWarn = {
 		provider = 'DiagnosticWarn', 
-		icon = '  ', 
+		icon = ' ', 
 		highlight = {colors.orange, colors.bg}
 	}
 }
@@ -143,8 +144,16 @@ gls.left[5] = {
 gls.left[6] = {
     DiagnosticHint = {
 		provider = 'DiagnosticHint', 
-		icon = '  ', 
+		icon = ' ', 
 		highlight = {colors.vivid_blue, colors.bg}
+	}
+}
+
+gls.left[7] = {
+    DiagnosticInfo = {
+		provider = 'DiagnosticInfo', 
+		icon = ' ', 
+		highlight = {colors.vivid_white, colors.bg}
 	}
 }
 
