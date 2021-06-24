@@ -9,7 +9,7 @@
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
 import:
- - ~/.config/alacritty/colors.yml
+ - ~/.config/alacritty/nord.yml
  - ~/.config/alacritty/font.yml
  - ~/.config/alacritty/window.yml
 #  - /path/to/alacritty.yml
