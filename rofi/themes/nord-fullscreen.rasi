@@ -1,23 +1,15 @@
 * {
+	// Color Scheme
+	background:				#2e3440dd; // nord00
+	background-light:		#eceff4; // nord06
+	background-light-alpha: #eceff411; // nord06
+	foreground:				#e5e9f0; // nord05
+
 	background-color: #00000000;
-	text-color: @foreground-list;
 	spacing: 15px;
 	font: "Noto Sans 20";
 
-
-	// Color Scheme
-	accent:					#7B8281;
-	background:				#0C1416dd;
-	background-light:		#7B8281;
-	background-light-alpha: #cac4bd11;
-	background-focus:		#0C1416;
-	foreground:				#cac4bd;
-	foreground-list:		#0C1416;
-	on:						#44ad4d;
-	off:					#e34039;
-
-
-  text-color: @background-light;
+	text-color: @foreground;
 }
 
 #window {

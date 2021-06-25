@@ -19,4 +19,4 @@ configuration{
 	kb-remove-char-back: "BackSpace";
 }
 
-@theme "full-dark"
+@theme "nord-fullscreen"
