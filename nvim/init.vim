@@ -8,7 +8,7 @@
 	call plug#begin(stdpath('data') . '/plugged')
 
 		" Color Schemes
-		Plug 'chriskempson/base16-vim'
+		Plug 'arcticicestudio/nord-vim'
 
 		" Visual enhancements
 		" Plug 'itchyny/lightline.vim'
@@ -53,40 +53,31 @@
 " # Theme
 " =============================================================================
 
+	" Run this command to get highlight groups undercursor when treesitter is disbled
 	" execute 'hi' synIDattr(synID(line("."), col("."), 1),"name")
 	
-	let base16colorspace=256
-	colorscheme base16-material
-	hi SignColumn ctermbg=NONE guibg=NONE
-	hi LineNr ctermbg=NONE guibg=NONE
-	hi CursorLineNr ctermbg=NONE guibg=NONE
-	hi CursorColumn ctermbg=11 guibg=#ffcb6b
+	colorscheme nord
 	hi Normal ctermbg=NONE guibg=NONE
+	hi SignColumn ctermbg=NONE guibg=NONE
 	hi ColorColumn ctermbg=NONE guibg=NONE
-	hi StatusLine ctermbg=NONE guibg=NONE
-	hi GitGutterAdd ctermbg=NONE guibg=NONE
-	hi GitGutterChange ctermbg=NONE guibg=NONE
-	hi GitGutterChangeDelete ctermbg=NONE guibg=NONE
-	hi GitGutterDelete ctermbg=NONE guibg=NONE
-	hi LspDiagnosticsDefaultError guifg=#ff5370
-	hi LspDiagnosticsDefaultWarning guifg=#ffcb6b
-	hi LspDiagnosticsDefaultHint guifg=#89ddff
-	hi LspDiagnosticsDefaultInformation guifg=#b2ccd6
-	" hi foldColumn ctermbg=NONE guibg=NONE
-	" hi diffAdd ctermbg=NONE guibg=NONE
-	hi clear ModeMsg
-	set termguicolors
+	hi! link LspReferenceRead Visual
+	hi! link LspReferenceText Visual
+	hi! link LspReferenceWrite Visual
+	set noshowmode
+	if has("termguicolors")
+		set termguicolors
+	endif
 
 " =============================================================================
 " # Lua plugins files
 " =============================================================================
 
-	lua require('lsp-config')
+	lua require('galaxyline-config')
 	lua require('treesitter-config')
 	lua require('telescope-config')
-	lua require('compe-config')
-	lua require('galaxyline-config')
 	lua require('gitsigns-config')
+	lua require('lsp-config')
+	lua require('compe-config')
 
 " =============================================================================
 " # Editor settings

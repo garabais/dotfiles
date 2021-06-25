@@ -1,35 +1,40 @@
 
 local gl = require('galaxyline')
 
+local nord = {
+	'#2E3440',
+	'#3B4252',
+	'#434C5E',
+	'#4C566A',
+	'#D8DEE9',
+	'#E5E9F0',
+	'#ECEFF4',
+	'#8FBCBB',
+	'#88C0D0',
+	'#81A1C1',
+	'#5E81AC',
+	'#BF616A',
+	'#D08770',
+	'#EBCB8B',
+	'#A3BE8C',
+	'#B48EAD',
+}
+
 local colors = {
-	bg = '#282c34',
-	fg = '#aab2bf',
-	section_bg = '#38393f',
-	blue = '#61afef',
-	green = '#98c379',
-	light_green = '#B5CEA8',
-	purple = '#c678dd',
-	orange = '#e5c07b',
-	red = '#D16969',
-	red1 = '#e06c75',
-	red2 = '#be5046',
-	magenta = '#D16D9E',
-	yellow = '#e5c07b',
-	dark_yellow = '#D7BA7D',
-	cyan = '#4EC9B0',
-	gray1 = '#5c6370',
-	gray2 = '#2c323d',
-	gray3 = '#3e4452',
-	darkgrey = '#5c6370',
-	grey = '#848586',
-	middlegrey = '#8791A5',
-	string_orange = '#CE9178',
-	vivid_blue = '#89ddff',
-	vivid_white = '#b2ccd6',
-	light_blue = '#9CDCFE',
-	error_red = '#ff5370',
-	info_yellow = '#FFCB6B',
-	white = '#FFFFFF'
+	black = nord[2],      -- nord01
+	white = nord[6],      -- nord05
+	dark_bg = nord[2],    -- nord01
+	light_bg = nord[4],   -- nord03
+	blue = nord[9],       -- nord08
+	green = nord[15],     -- nord14
+	magenta = nord[16],   -- nord15
+	orange = nord[13],    -- nord12
+	red = nord[12],       -- nord11
+	yellow = nord[14],    -- nord13
+	teal = nord[8],       -- nord07
+	grey = nord[5],       -- nord04
+	dark_blue = nord[11], -- nord10
+	light_grey = '#aab2bf',
 }
 
 local condition = require('galaxyline.condition')
@@ -44,9 +49,9 @@ gls.left[1] = {
 			local mode_color = {
 				n = colors.blue,
 				i = colors.green,
-				v = colors.purple,
-				[''] = colors.purple,
-				V = colors.purple,
+				v = colors.magenta,
+				[''] = colors.magenta,
+				V = colors.magenta,
 				c = colors.magenta,
 				no = colors.blue,
 				s = colors.orange,
@@ -57,9 +62,9 @@ gls.left[1] = {
 				Rv = colors.red,
 				cv = colors.blue,
 				ce = colors.blue,
-				r = colors.cyan,
-				rm = colors.cyan,
-				['r?'] = colors.cyan,
+				r = colors.teal,
+				rm = colors.teal,
+				['r?'] = colors.teal,
 				['!'] = colors.blue,
 				t = colors.blue
 			}
@@ -93,7 +98,7 @@ gls.left[1] = {
 			return '  ' .. alias[vim_mode] .. ' '
 
 		end,
-		highlight = {colors.white, colors.bg}
+		highlight = {colors.black, colors.dark_bg}
 	}
 }
 
@@ -103,7 +108,7 @@ gls.left[2] = {
         condition = buffer_not_empty,
         highlight = {
             require('galaxyline.provider_fileinfo').get_file_icon,
-            colors.section_bg
+            colors.light_bg
         }
     }
 }
@@ -114,14 +119,14 @@ gls.left[3] = {
 			local file = vim.fn.expand('%:t')
 			if vim.bo.readonly then return file .. '  ' end
 			if vim.bo.modifiable and vim.bo.modified then
-					vim.api.nvim_command('hi GalaxyFileName guifg=' .. colors.fg)
+					vim.api.nvim_command('hi GalaxyFileName guifg=' .. colors.light_grey)
 			end
 			return file .. ' '
 		end,
         condition = buffer_not_empty,
-		highlight = {colors.white, colors.section_bg},
+		highlight = {colors.white, colors.light_bg},
 		separator = ' ',
-        separator_highlight = {colors.section_bg, colors.bg}
+        separator_highlight = {colors.light_bg, colors.dark_bg}
     }
 }
 
@@ -129,7 +134,7 @@ gls.left[4] = {
     DiagnosticError = {
 		provider = 'DiagnosticError', 
 		icon = ' ', 
-		highlight = {colors.error_red, colors.bg}
+		highlight = {colors.red, colors.dark_bg}
 	}
 }
 
@@ -137,7 +142,7 @@ gls.left[5] = {
 	DiagnosticWarn = {
 		provider = 'DiagnosticWarn', 
 		icon = ' ', 
-		highlight = {colors.orange, colors.bg}
+		highlight = {colors.yellow, colors.dark_bg}
 	}
 }
 
@@ -145,7 +150,7 @@ gls.left[6] = {
     DiagnosticHint = {
 		provider = 'DiagnosticHint', 
 		icon = ' ', 
-		highlight = {colors.vivid_blue, colors.bg}
+		highlight = {colors.dark_blue, colors.dark_bg}
 	}
 }
 
@@ -153,7 +158,7 @@ gls.left[7] = {
     DiagnosticInfo = {
 		provider = 'DiagnosticInfo', 
 		icon = ' ', 
-		highlight = {colors.vivid_white, colors.bg}
+		highlight = {colors.blue, colors.dark_bg}
 	}
 }
 
@@ -162,9 +167,9 @@ gls.right[1] = {
         provider = 'DiffAdd',
         condition = condition.check_git_workspace,
         icon = '+',
-        highlight = {colors.green, colors.bg},
+        highlight = {colors.green, colors.dark_bg},
         separator = ' ',
-        separator_highlight = {colors.section_bg, colors.bg}
+        separator_highlight = {colors.light_bg, colors.dark_bg}
     }
 }
 gls.right[2] = {
@@ -172,7 +177,7 @@ gls.right[2] = {
         provider = 'DiffModified',
         condition = condition.check_git_workspace,
         icon = '~',
-        highlight = {colors.orange, colors.bg}
+        highlight = {colors.yellow, colors.dark_bg}
     }
 }
 gls.right[3] = {
@@ -180,7 +185,7 @@ gls.right[3] = {
         provider = 'DiffRemove',
         condition = condition.check_git_workspace,
         icon = '-',
-        highlight = {colors.red1, colors.bg}
+        highlight = {colors.red, colors.dark_bg}
     }
 }
 
@@ -189,9 +194,9 @@ gls.right[4] = {
         -- provider = {function() return ' ' end, 'GitBranch'},
 		provider = {function() return ' ' end, 'GitBranch'},
         condition = condition.check_git_workspace,
-        highlight = {colors.middlegrey, colors.bg},
+        highlight = {colors.grey, colors.dark_bg},
 		separator = ' ',
-        separator_highlight = {colors.middlegrey, colors.bg}
+        separator_highlight = {colors.grey, colors.dark_bg}
     }
 }
 
@@ -204,7 +209,7 @@ gls.right[5] = {
 			return ' '.. result .. '% '
 		end,
 		separator = ' ',
-        separator_highlight = {colors.middlegrey, colors.bg},
+        separator_highlight = {colors.grey, colors.dark_bg},
 		highlight = 'GalaxyViMode'
     }
 }
