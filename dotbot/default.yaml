@@ -20,6 +20,7 @@
     ~/.config/rofi: rofi
     ~/.config/fish: fish
     ~/.config/gtk-3.0: theme/gtk
+    ~/.config/tmux: tmux
     ~/.local/share/fonts: fonts
     ~/.local/bin: bin
     ~/.icons: theme/icons
@@ -27,7 +28,6 @@
     ~/.bashrc: bash/bashrc
     ~/.profile: profile/profile
     ~/.xsession: xorg/xsession
-    ~/.tmux.conf: tmux/tmux.conf
 
 - shell:
   - [fish ~/.config/fish/init.fish, Setting up fish]
