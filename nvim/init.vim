@@ -131,6 +131,9 @@
 	" Give more space for displaying messages.
 	set cmdheight=2
 
+	" Remove 'Pattern not found' on autocompletion
+	set shortmess+=c
+
 " =============================================================================
 " # Plugins settings
 " =============================================================================
