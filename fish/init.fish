@@ -6,7 +6,7 @@ abbr -a ls exa
 abbr -a ll "exa -lh"
 abbr -a la "exa -lah"
 
-set -U fish_color_cancel "FF5370" --bold
+set -U fish_color_cancel red --bold
 set -u fish_color_autosuggestion brblack
 set -u fish_color_command blue
 set -u fish_color_comment brblack
