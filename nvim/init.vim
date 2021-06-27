@@ -60,6 +60,10 @@
 	hi Normal ctermbg=NONE guibg=NONE
 	hi SignColumn ctermbg=NONE guibg=NONE
 	hi ColorColumn ctermbg=NONE guibg=NONE
+	hi SpellBad ctermbg=NONE guibg=NONE
+	hi SpellCap ctermbg=NONE guibg=NONE
+	hi SpellRare ctermbg=NONE guibg=NONE
+	hi SpellLocal ctermbg=NONE guibg=NONE
 	hi! link LspReferenceRead Visual
 	hi! link LspReferenceText Visual
 	hi! link LspReferenceWrite Visual
