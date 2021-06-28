@@ -2,12 +2,7 @@
 
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-pgrep -x picom > /dev/null || picom &
 wm="bspwm" ~/.config/polybar/launch.sh
-# nitrogen --restore &
-if [[ -f "$HOME/.fehbg" ]]; then
-	~/.fehbg &
-fi
 
 bspc monitor "eDP-1" -s "HDMI-1"
 

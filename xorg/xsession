@@ -1,12 +1,21 @@
+#!/bin/sh
 
-# Change Caps lock to escape keeping Caps lock funcionality whit shift
-# setxkbmap -option caps:escape_shifted_capslock
+# Recover wallpaper set with feh if exists
+if [[ -f "$HOME/.fehbg" ]]; then
+	~/.fehbg &
+fi
 
 # Set the default cursor for the xsession
-xsetroot -cursor_name left_ptr
+xsetroot -cursor_name left_ptr &
+
+# Launch compositor for transparency
+picom &
+
+# Launch dunst as default notification deamon
+dunst & 
 
 # Disable sound bell
-xset -b
+xset -b &
 
 # Enable lockscreen
 xss-lock -l -- multilockscreen --lock dim &
