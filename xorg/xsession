@@ -1,12 +1,12 @@
 #!/bin/sh
 
-# Recover wallpaper set with feh if exists
-if [[ -f "$HOME/.fehbg" ]]; then
-	~/.fehbg &
-fi
-
 # Set the default cursor for the xsession
 xsetroot -cursor_name left_ptr &
+
+# Recover wallpaper set with feh if exists
+if [[ -f "$HOME/.fehbg" ]]; then
+	~/.fehbg 
+fi
 
 # Launch compositor for transparency
 picom &
