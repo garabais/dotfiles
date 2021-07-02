@@ -19,6 +19,7 @@
     ~/.config/picom: picom
     ~/.config/rofi: rofi
     ~/.config/fish: fish
+    ~/.config/bat: bat
     ~/.config/gtk-3.0: theme/gtk
     ~/.config/tmux: tmux
     ~/.local/share/fonts: fonts

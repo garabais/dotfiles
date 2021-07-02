@@ -10,8 +10,6 @@ export EDITOR=nvim
 
 export FZF_DEFAULT_OPTS="--reverse --height 90% --margin 1"
 
-export BAT_STYLE="numbers,changes"
-
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\e[01;38;5;74m'  # begin bold
