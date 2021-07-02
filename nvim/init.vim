@@ -29,9 +29,8 @@
 
 		" Quality of life
 		Plug 'airblade/vim-rooter'
-		Plug 'preservim/nerdcommenter'
+		Plug 'tpope/vim-commentary'
 		Plug 'jiangmiao/auto-pairs'
-		" Plug 'tpope/vim-surround'
 
 		" Telescope
 		Plug 'nvim-lua/popup.nvim'
@@ -139,25 +138,6 @@
 	set shortmess+=c
 
 " =============================================================================
-" # Plugins settings
-" =============================================================================
-
-	" Nerd commenter
-		" Add spaces after comment delimiters by default
-		let g:NERDSpaceDelims = 1
-
-		 " Use compact syntax for prettified multi-line comments
-		let g:NERDCompactSexyComs = 1
-
-		" Align line-wise comment delimiters flush left instead of following code indentation
-		let g:NERDDefaultAlign = 'left'
-		let g:NERDCustomDelimiters = {
-			\ 'gitconfig': { 'left': '#'}
-		\ }
-
-		let g:NERDCreateDefaultMappings = 0
-
-" =============================================================================
 " # Keyboard shortcuts
 " =============================================================================
 	
@@ -197,10 +177,6 @@
 	nmap <leader>oa zg
 	nmap <leader>oA zw
 	nmap <leader>oc z=
-
-	" Nerd Commenter
-	nmap <leader>cc <plug>NERDCommenterToggle
-	xmap <leader>cc <plug>NERDCommenterToggle
 
 	" LSP
 	inoremap <silent><expr> <C-Space> compe#complete()
