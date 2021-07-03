@@ -29,7 +29,6 @@ lib32-vulkan-intel
 libtool
 linux
 linux-firmware
-lxappearance
 m4
 maim
 make
@@ -38,16 +37,15 @@ man-pages
 mcomix
 mpv
 neofetch
+neovim
 networkmanager
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
-npm
 ntfs-3g
 ntp
 nvidia
 nvidia-prime
-nvidia-utils
 nvtop
 obs-studio
 os-prober
@@ -67,7 +65,6 @@ python-pip
 qbittorrent
 qemu
 qemu-arch-extra
-qt5-quickcontrols
 reflector
 ripgrep
 rofi
@@ -80,7 +77,6 @@ sxhkd
 sxiv
 texinfo
 tmux
-tree-sitter
 ttf-dejavu
 ttf-inconsolata
 ttf-liberation
