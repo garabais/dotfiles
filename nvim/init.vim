@@ -21,6 +21,7 @@
 		autocmd ColorScheme nord hi SpellCap ctermbg=NONE guibg=NONE
 		autocmd ColorScheme nord hi SpellRare ctermbg=NONE guibg=NONE
 		autocmd ColorScheme nord hi SpellLocal ctermbg=NONE guibg=NONE
+		autocmd ColorScheme nord hi foldColumn gui=bold cterm=bold ctermfg=06 guifg=#ECEFF4 guibg=None ctermbg=None
 	augroup END
 
 	" Colorscheme declaration should be after autocmd overriding it
