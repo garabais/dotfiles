@@ -5,82 +5,31 @@
 " # Plugins
 " =============================================================================
 
-	call plug#begin(stdpath('data') . '/plugged')
-
-		" Color Schemes
-		Plug 'arcticicestudio/nord-vim'
-
-		" Visual enhancements
-		" Plug 'itchyny/lightline.vim'
-		Plug 'machakann/vim-highlightedyank'
-		Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-		Plug 'kyazdani42/nvim-web-devicons'
-
-		" LSP
-		Plug 'neovim/nvim-lspconfig'
-		"Plug 'nvim-lua/lsp_extensions.nvim'
-
-		" Autocompletion
-		Plug 'hrsh7th/nvim-compe'
-		Plug 'hrsh7th/vim-vsnip'
-
-		" Syntax highlight
-		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
-
-		" Quality of life
-		Plug 'airblade/vim-rooter'
-		Plug 'tpope/vim-commentary'
-		Plug 'jiangmiao/auto-pairs'
-
-		" Telescope
-		Plug 'nvim-lua/popup.nvim'
-		Plug 'nvim-lua/plenary.nvim'
-		Plug 'nvim-telescope/telescope.nvim'
-		
-		" Git
-		Plug 'tpope/vim-fugitive'
-		Plug 'lewis6991/gitsigns.nvim'
-
-		" Fish script syntax
-		Plug 'dag/vim-fish'
-
-	call plug#end()
-
-
+	lua require('plugins')
 
 " =============================================================================
 " # Theme
 " =============================================================================
 
-	" Run this command to get highlight groups undercursor when treesitter is disbled
-	" execute 'hi' synIDattr(synID(line("."), col("."), 1),"name")
-	
+	" Overriding the colorscheme in a proper way
+	augroup nord-theme-overrides
+		autocmd!
+		autocmd ColorScheme nord hi Normal ctermbg=NONE guibg=NONE
+		autocmd ColorScheme nord hi SignColumn ctermbg=NONE guibg=NONE
+		autocmd ColorScheme nord hi ColorColumn ctermbg=NONE guibg=NONE
+		autocmd ColorScheme nord hi SpellBad ctermbg=NONE guibg=NONE
+		autocmd ColorScheme nord hi SpellCap ctermbg=NONE guibg=NONE
+		autocmd ColorScheme nord hi SpellRare ctermbg=NONE guibg=NONE
+		autocmd ColorScheme nord hi SpellLocal ctermbg=NONE guibg=NONE
+	augroup END
+
+	" Colorscheme declaration should be after autocmd overriding it
+	" or have 'filetype plugin indent on' and 'syntax on' before using hi
 	colorscheme nord
-	hi Normal ctermbg=NONE guibg=NONE
-	hi SignColumn ctermbg=NONE guibg=NONE
-	hi ColorColumn ctermbg=NONE guibg=NONE
-	hi SpellBad ctermbg=NONE guibg=NONE
-	hi SpellCap ctermbg=NONE guibg=NONE
-	hi SpellRare ctermbg=NONE guibg=NONE
-	hi SpellLocal ctermbg=NONE guibg=NONE
-	hi! link LspReferenceRead Visual
-	hi! link LspReferenceText Visual
-	hi! link LspReferenceWrite Visual
 	set noshowmode
 	if has("termguicolors")
 		set termguicolors
 	endif
-
-" =============================================================================
-" # Lua plugins files
-" =============================================================================
-
-	lua require('galaxyline-config')
-	lua require('treesitter-config')
-	lua require('telescope-config')
-	lua require('gitsigns-config')
-	lua require('lsp-config')
-	lua require('compe-config')
 
 " =============================================================================
 " # Editor settings
@@ -222,3 +171,5 @@
 			autocmd FileType markdown setlocal spell
 			autocmd FileType gitcommit setlocal spell
 
+	" Update packer configuration on save
+		autocmd BufWritePost plugins.lua PackerCompile
