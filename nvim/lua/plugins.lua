@@ -15,6 +15,7 @@ require('packer').startup(function()
   
   -- LSP
   use 'neovim/nvim-lspconfig'
+  use 'kabouzeid/nvim-lspinstall'
 
   -- Visual enhancements
   use 'machakann/vim-highlightedyank'
