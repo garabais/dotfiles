@@ -14,59 +14,109 @@ require('packer').startup(function()
   use 'arcticicestudio/nord-vim'
   
   -- LSP
-  use 'neovim/nvim-lspconfig'
-  use 'kabouzeid/nvim-lspinstall'
+  use {
+    'neovim/nvim-lspconfig',
+    event = 'BufReadPre',
+    cmd = {'LspInfo', 'LspRestart', 'LspStart', 'LspStop', 'LspInstall', 'LspUninstall'},
+  }
+  use {
+    'kabouzeid/nvim-lspinstall', 
+    after = {'nvim-lspconfig'},
+    config = function()
+      require('config.lsp')
+    end
+  }
 
-  -- Visual enhancements
-  use 'machakann/vim-highlightedyank'
+  -- Status line
   use {
     'glepnir/galaxyline.nvim',
-      branch = 'main',
-      -- Some optional icons
-      requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    branch = 'main',
+    event = 'BufWinEnter',
+    -- Some optional icons
+    requires = {{'kyazdani42/nvim-web-devicons'}},
+    config = function()
+      require('config.statusline')
+    end
   }
 
   -- Quality of life
-  use 'tpope/vim-commentary'
   use 'airblade/vim-rooter'
-  use 'jiangmiao/auto-pairs'
+  use {
+    'tpope/vim-commentary',
+    event = 'BufRead',
+  }
+  use {
+    'jiangmiao/auto-pairs',
+    event = 'BufEnter',
+  }
+  use {
+    'machakann/vim-highlightedyank',
+    event = 'BufEnter'
+  }
 
 
   -- Syntax highlight and more
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use { 
+    'nvim-treesitter/nvim-treesitter', 
+    run = ':TSUpdate',
+    event = 'BufRead',
+    config = function()
+      require('config.treesiter')
+    end
+  }
 
   -- Autocompletion
-  use 'hrsh7th/nvim-compe'
-  use 'hrsh7th/vim-vsnip'
+  use {
+    'hrsh7th/nvim-compe',
+    event = 'InsertEnter',
+    config = function()
+      require('config.compe')
+    end
+  }
+
+  use {
+    'hrsh7th/vim-vsnip', 
+    after = 'nvim-compe',
+    event = 'InsertEnter'
+  }
 
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'kyazdani42/nvim-web-devicons'}},
+    event = 'BufEnter',
+    cmd = 'Telescope',
+    config = function()
+      require('config.telescope')
+    end
   }
 
   -- Git
-  use 'tpope/vim-fugitive'
+  use {
+    'tpope/vim-fugitive',
+    event = 'BufRead',
+    cmd = 'Git',
+  }
   use {
     'lewis6991/gitsigns.nvim',
+    event = 'BufRead',
+    config = function()
+      require('config.gitsigns')
+    end,
     requires = {
       'nvim-lua/plenary.nvim'
     }
   }
 
   -- Fish support
-  use 'dag/vim-fish'
+  use {
+    'dag/vim-fish',
+    ft = 'fish'
+  }
+
 end)
 
 if first_run then
   vim.api.nvim_command('PackerInstall')
   vim.api.nvim_command('PackerCompile')
 end
-
-
-require('galaxyline-config')
-require('treesitter-config')
-require('telescope-config')
-require('gitsigns-config')
-require('lsp-config')
-require('compe-config')

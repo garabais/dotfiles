@@ -173,4 +173,4 @@
 			autocmd FileType gitcommit setlocal spell
 
 	" Update packer configuration on save
-		autocmd BufWritePost plugins.lua PackerCompile
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
