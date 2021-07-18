@@ -5,7 +5,6 @@ automake
 base
 bat
 bison
-bspwm
 discord
 dua-cli
 dunst
@@ -26,7 +25,6 @@ groff
 grub
 jdk-openjdk
 lib32-vulkan-intel
-libtool
 linux
 linux-firmware
 m4
@@ -42,12 +40,12 @@ networkmanager
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+npm
 ntfs-3g
 ntp
 nvidia
 nvidia-prime
 nvtop
-obs-studio
 os-prober
 p7zip
 pacman-contrib
@@ -63,17 +61,13 @@ progress
 pulsemixer
 python-pip
 qbittorrent
-qemu
-qemu-arch-extra
 reflector
 ripgrep
 rofi
-rust-analyzer
 rustup
 sddm
 steam
 sudo
-sxhkd
 sxiv
 texinfo
 tmux
