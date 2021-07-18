@@ -6,16 +6,15 @@
 - clean: ['~', '~/.config']
 
 - link:
-    ~/.config/polybar: polybar
     ~/.config/dunst: dunst
     ~/.config/bottom: bottom
     ~/.config/gh: gh
     ~/.config/git: git
     ~/.config/nvim: nvim
     ~/.config/paru: paru
-    ~/.config/bspwm: bspwm
-    ~/.config/sxhkd: sxhkd
     ~/.config/alacritty: alacritty
+    ~/.config/dwm: dwm
+    ~/.config/dwmblocks: dwmblocks
     ~/.config/picom: picom
     ~/.config/rofi: rofi
     ~/.config/fish: fish

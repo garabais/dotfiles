@@ -1,0 +1,32 @@
+#!/bin/sh
+
+battery="BAT0"
+b_path="/sys/class/power_supply/$battery" 
+if [ -e $b_path ]; then 
+	perc=$(cat "$b_path/capacity")
+
+	#  
+	case "$(cat "$b_path/status")" in
+		"Full") status="" ;;
+		"Discharging") 
+			case $perc in
+				100) status="" ;;
+				9?)  status="" ;;
+				8?)  status="" ;;
+				7?)  status="" ;;
+				6?)  status="" ;;
+				5?)  status="" ;;
+				4?)  status="" ;;
+				3?)  status="" ;;
+				2?)  status="" ;;
+				1?)  status="" ;;
+				?)   status="" ;;
+			esac
+			;;
+		"Charging") status="" ;;
+		"Not charging") status="" ;;
+		"Unknown") status="" ;;
+	esac
+
+	echo "$status $perc%"
+fi

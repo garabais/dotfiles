@@ -51,7 +51,7 @@ case $chosen in
 		ans=$(confirm_exit &)
 
 		if [[ $ans == "Yes" ]]; then
-			bspc quit
+			pkill dwm
 		fi
 		exit 0
         ;;

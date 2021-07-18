@@ -8,3 +8,9 @@
 [submodule "tmux/plugins/nord-tmux"]
 	path = tmux/plugins/nord-tmux
 	url = https://github.com/arcticicestudio/nord-tmux
+[submodule "dwm"]
+	path = dwm
+	url = https://github.com/garabais/dwm
+[submodule "dwmblocks"]
+	path = dwmblocks
+	url = https://github.com/garabais/dwmblocks

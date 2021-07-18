@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]; then
+	[ $(pulsemixer --get-mute) -eq 1 ] && echo "婢 0%" && exit
+
+	vol="$(pulsemixer --get-volume | awk '{print $1}')"
+
+	if [ "$vol" -gt "70" ]; then
+		icon="墳"
+	elif [ "$vol" -lt "30" ]; then
+		icon="奄"
+	else
+		icon="奔"
+	fi
+
+	echo "$icon $vol%"
+else
+	pulsemixer $@
+
+	pkill -RTMIN+1 dwmblocks
+fi
