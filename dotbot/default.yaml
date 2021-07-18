@@ -31,3 +31,17 @@
 
 - shell:
   - [fish ~/.config/fish/init.fish, Setting up fish]
+  -
+    command: cd dwm && sudo make install clean
+    stdin: true
+    stdout: true
+    stderr: true
+    description: Installing dwm
+    quiet: true
+  -
+    command: cd dwmblocks && sudo make install clean
+    stdin: true
+    stdout: true
+    stderr: true
+    description: Installing dwmblocks
+    quiet: true
