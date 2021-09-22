@@ -5,7 +5,7 @@ function M.setup(client, bufnr)
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
   -- vim.cmd [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
-  vim.cmd [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
+  -- vim.cmd [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
 end
 
 return M

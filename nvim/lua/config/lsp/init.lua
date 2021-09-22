@@ -12,6 +12,10 @@ end
 
 local handlers = require('config.lsp.handlers')
 
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 local function setup_servers()
   require'lspinstall'.setup()
 
@@ -20,7 +24,8 @@ local function setup_servers()
   for _, server in pairs(servers) do
     nvim_lsp[server].setup{
       on_attach = on_attach,
-      handlers = handlers
+      handlers = handlers,
+      capabilities = capabilities,
     }
   end
 
