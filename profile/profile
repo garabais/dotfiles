@@ -16,7 +16,6 @@ export LESSHISTFILE="-"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$CARGO_HOME/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
-export PATH="$PATH:$NPM_PACKAGES/bin"
 
 # Make java programs works nice with tilling window managers
 export _JAVA_AWT_WM_NONREPARENTING=1
