@@ -1,0 +1,10 @@
+[Unit]
+Description=Check if the battery is low every 5 minutes
+
+[Timer]
+OnActiveSec=0
+OnUnitActiveSec=4min
+AccuracySec=1min
+
+[Install]
+WantedBy=timers.target

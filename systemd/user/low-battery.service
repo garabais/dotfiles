@@ -1,0 +1,5 @@
+[Unit]
+Description=Send a notification if the battery is low
+
+[Service]
+ExecStart=-%h/.local/bin/low-battery

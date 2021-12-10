@@ -12,6 +12,7 @@
     ~/.config/git: git
     ~/.config/nvim: nvim
     ~/.config/paru: paru
+    ~/.config/systemd: systemd
     ~/.config/alacritty: alacritty
     ~/.config/dwm: dwm
     ~/.config/dwmblocks: dwmblocks
