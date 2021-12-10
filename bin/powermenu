@@ -1,6 +1,7 @@
 #!/bin/bash
 
 rofi_command="rofi"
+lock_command="betterlockscreen --lock dim"
 
 #### Options ###
 power_off=" Power off"
@@ -20,7 +21,7 @@ options="$lock\n$power_off\n$reboot\n$suspend\n$log_out"
 chosen="$(echo -e "$options" | $rofi_command -dmenu -i -p "Select" -selected-row 0)"
 case $chosen in
     $lock)
-		multilockscreen --lock dim
+		$lock_command
 		exit 0
         ;;    
     $power_off)

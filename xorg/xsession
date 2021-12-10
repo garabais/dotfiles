@@ -21,4 +21,4 @@ dunst &
 xset -b &
 
 # Enable lockscreen
-xss-lock -l -- multilockscreen --lock dim &
+xss-lock -l -- betterlockscreen --lock dim &
