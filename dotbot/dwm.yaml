@@ -1,0 +1,26 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.config/dwm: dwm
+    ~/.config/dwmblocks: dwmblocks
+
+- shell:
+  -
+    command: cd dwm && sudo make install clean
+    stdin: true
+    stdout: true
+    stderr: true
+    description: Installing dwm
+    quiet: true
+  -
+    command: cd dwmblocks && sudo make install clean
+    stdin: true
+    stdout: true
+    stderr: true
+    description: Installing dwmblocks
+    quiet: true
