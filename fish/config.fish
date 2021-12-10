@@ -16,3 +16,4 @@ end
 
 
 alias docker="sudo docker"
+alias ssh="TERM=xterm-256color /usr/bin/ssh"
