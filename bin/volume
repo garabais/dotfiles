@@ -17,5 +17,7 @@ if [ $# -eq 0 ]; then
 else
 	pulsemixer $@
 
+	dunstify "Volume: " -h "int:value:$(pulsemixer --get-volume)" -a "Volume" -u low -i audio-volume-high 
+
 	pkill -RTMIN+1 dwmblocks
 fi
