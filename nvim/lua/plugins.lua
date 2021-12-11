@@ -42,8 +42,11 @@ require('packer').startup(function()
   -- Quality of life
   use 'airblade/vim-rooter'
   use {
-    'tpope/vim-commentary',
+    'numToStr/Comment.nvim',
     event = 'BufRead',
+    config = function()
+        require('config.comment')
+    end
   }
   use {
     'jiangmiao/auto-pairs',
