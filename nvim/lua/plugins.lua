@@ -17,10 +17,10 @@ require('packer').startup(function()
   use {
     'neovim/nvim-lspconfig',
     event = 'BufReadPre',
-    cmd = {'LspInfo', 'LspRestart', 'LspStart', 'LspStop', 'LspInstall', 'LspUninstall'},
+    cmd = {'LspInfo', 'LspRestart', 'LspStart', 'LspStop', 'LspInstall', 'LspUninstall', 'LspInstallInfo', 'LspUninstallAll', 'LspInstallLog', 'LspPrintInstalled'},
   }
   use {
-    'kabouzeid/nvim-lspinstall', 
+    'williamboman/nvim-lsp-installer', 
     after = {'nvim-lspconfig'},
     config = function()
       require('config.lsp')

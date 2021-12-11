@@ -22,6 +22,15 @@
 		autocmd ColorScheme nord hi SpellRare ctermbg=NONE guibg=NONE
 		autocmd ColorScheme nord hi SpellLocal ctermbg=NONE guibg=NONE
 		autocmd ColorScheme nord hi foldColumn gui=bold cterm=bold ctermfg=06 guifg=#ECEFF4 guibg=None ctermbg=None
+		" Temporary fix until nord merges the new groups
+		autocmd ColorScheme nord highlight DiagnosticWarn ctermfg=3 guifg=#EBCB8B
+		autocmd ColorScheme nord highlight DiagnosticError ctermfg=1 guifg=#BF616A
+		autocmd ColorScheme nord highlight DiagnosticInfo ctermfg=6 guifg=#88C0D0
+		autocmd ColorScheme nord highlight DiagnosticHint ctermfg=12 guifg=#5E81AC
+		autocmd ColorScheme nord highlight DiagnosticUnderlineWarn ctermfg=3 guifg=#EBCB8B gui=undercurl cterm=underline
+		autocmd ColorScheme nord highlight DiagnosticUnderlineError ctermfg=1 guifg=#BF616A gui=undercurl cterm=underline
+		autocmd ColorScheme nord highlight DiagnosticUnderlineInfo ctermfg=6 guifg=#88C0D0 gui=undercurl cterm=underline
+		autocmd ColorScheme nord highlight DiagnosticUnderlineHint ctermfg=12 guifg=#5E81AC gui=undercurl cterm=underline
 	augroup END
 
 	" Colorscheme declaration should be after autocmd overriding it
