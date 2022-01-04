@@ -22,3 +22,6 @@ xset -b &
 
 # Enable lockscreen
 xss-lock -l -- betterlockscreen --lock dim &
+
+# Polkit agent for virt-manager, gparted, etc. (polkit-gnome package on Arch)
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
