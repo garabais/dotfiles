@@ -1,3 +1,32 @@
+-- require('lualine').setup {
+--   options = {
+--     icons_enabled = true,
+--     theme = 'nord',
+--     component_separators = { left = '', right = ''},
+--     section_separators = { left = '', right = ''},
+--     disabled_filetypes = {},
+--     always_divide_middle = true,
+--     globalstatus = false,
+--   },
+--   sections = {
+--     lualine_a = {'mode'},
+--     lualine_b = {'filename'},
+--     lualine_c = {'diagnostics'},
+--     lualine_x = {'encoding', 'fileformat'},
+--     lualine_y = {'diff', 'branch'},
+--     lualine_z = {'location'}
+--   },
+--   inactive_sections = {
+--     lualine_a = {},
+--     lualine_b = {},
+--     lualine_c = {'filename'},
+--     lualine_x = {'location'},
+--     lualine_y = {},
+--     lualine_z = {}
+--   },
+--   tabline = {},
+--   extensions = {}
+-- }
 
 local gl = require('galaxyline')
 
@@ -76,7 +105,6 @@ gls.left[1] = {
 					  V = 'VISUAL',
 					  [''] = 'VISUAL',
 					  v ='VISUAL',
-					  c  = 'COMMAND-LINE',
 					  ['r?'] = ':CONFIRM',
 					  rm = '--MORE',
 					  R  = 'REPLACE',
@@ -89,7 +117,7 @@ gls.left[1] = {
 					  ['!']  = 'SHELL',
 				  }
 
-			
+		
 			local vim_mode = vim.fn.mode()
 
 			-- vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim_mode])
@@ -107,12 +135,12 @@ gls.left[2] = {
         provider = {function() return '  ' end, 'FileIcon'},
         condition = buffer_not_empty,
         highlight = {
-            require('galaxyline.provider_fileinfo').get_file_icon,
+            require('galaxyline.providers.fileinfo').get_file_icon,
             colors.light_bg
         }
     }
 }
-			
+		
 gls.left[3] = {
     FileName = {
         provider = function()
@@ -132,32 +160,32 @@ gls.left[3] = {
 
 gls.left[4] = {
     DiagnosticError = {
-		provider = 'DiagnosticError', 
-		icon = ' ', 
+		provider = 'DiagnosticError',
+		icon = ' ',
 		highlight = {colors.red, colors.dark_bg}
 	}
 }
 
 gls.left[5] = {
 	DiagnosticWarn = {
-		provider = 'DiagnosticWarn', 
-		icon = ' ', 
+		provider = 'DiagnosticWarn',
+		icon = ' ',
 		highlight = {colors.yellow, colors.dark_bg}
 	}
 }
 
 gls.left[6] = {
     DiagnosticHint = {
-		provider = 'DiagnosticHint', 
-		icon = ' ', 
+		provider = 'DiagnosticHint',
+		icon = ' ',
 		highlight = {colors.dark_blue, colors.dark_bg}
 	}
 }
 
 gls.left[7] = {
     DiagnosticInfo = {
-		provider = 'DiagnosticInfo', 
-		icon = ' ', 
+		provider = 'DiagnosticInfo',
+		icon = ' ',
 		highlight = {colors.blue, colors.dark_bg}
 	}
 }

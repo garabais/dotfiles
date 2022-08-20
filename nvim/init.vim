@@ -22,15 +22,6 @@
 		autocmd ColorScheme nord hi SpellRare ctermbg=NONE guibg=NONE
 		autocmd ColorScheme nord hi SpellLocal ctermbg=NONE guibg=NONE
 		autocmd ColorScheme nord hi foldColumn gui=bold cterm=bold ctermfg=06 guifg=#ECEFF4 guibg=None ctermbg=None
-		" Temporary fix until nord merges the new groups
-		autocmd ColorScheme nord highlight DiagnosticWarn ctermfg=3 guifg=#EBCB8B
-		autocmd ColorScheme nord highlight DiagnosticError ctermfg=1 guifg=#BF616A
-		autocmd ColorScheme nord highlight DiagnosticInfo ctermfg=6 guifg=#88C0D0
-		autocmd ColorScheme nord highlight DiagnosticHint ctermfg=12 guifg=#5E81AC
-		autocmd ColorScheme nord highlight DiagnosticUnderlineWarn ctermfg=3 guifg=#EBCB8B gui=undercurl cterm=underline
-		autocmd ColorScheme nord highlight DiagnosticUnderlineError ctermfg=1 guifg=#BF616A gui=undercurl cterm=underline
-		autocmd ColorScheme nord highlight DiagnosticUnderlineInfo ctermfg=6 guifg=#88C0D0 gui=undercurl cterm=underline
-		autocmd ColorScheme nord highlight DiagnosticUnderlineHint ctermfg=12 guifg=#5E81AC gui=undercurl cterm=underline
 	augroup END
 
 	" Colorscheme declaration should be after autocmd overriding it
@@ -40,6 +31,21 @@
 	if has("termguicolors")
 		set termguicolors
 	endif
+  
+  " blue
+  highlight! CmpItemAbbrMatch guibg=NONE guifg=#88C0D0
+  highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#88C0D0
+  " light blue
+  highlight! CmpItemKindVariable guibg=NONE guifg=#8FBCBB
+  highlight! CmpItemKindInterface guibg=NONE guifg=#8FBCBB
+  highlight! CmpItemKindText guibg=NONE guifg=#8FBCBB
+  " pink
+  highlight! CmpItemKindFunction guibg=NONE guifg=#B48EAD
+  highlight! CmpItemKindMethod guibg=NONE guifg=#B48EAD
+  " front
+  highlight! CmpItemKindKeyword guibg=NONE guifg=#ECEFF4
+  highlight! CmpItemKindProperty guibg=NONE guifg=#ECEFF4
+  highlight! CmpItemKindUnit guibg=NONE guifg=#ECEFF4
 
 " =============================================================================
 " # Editor settings
@@ -138,14 +144,14 @@
 	nmap <leader>oc z=
 
 	" LSP
-	inoremap <silent><expr> <C-Space> compe#complete()
-	inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-	inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-	inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-	inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
-
-	inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-	inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+	" inoremap <silent><expr> <C-Space> compe#complete()
+	" inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+	" inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+	" inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+	" inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+	"
+	" inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+	" inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 
 	" Telescope
 	nnoremap <leader>ff <cmd>Telescope find_files<cr>
