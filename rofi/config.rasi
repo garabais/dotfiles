@@ -10,9 +10,7 @@ configuration{
 	display-file-browser: "";
 	display-run: "";
 
-	kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
 	kb-remove-to-eol: "Control+Shift+e";
-	kb-row-down: "Down,Control+j";
 	kb-accept-entry: "Control+m,Return,KP_Enter";
 	kb-mode-next: "Shift+Right,Control+Tab,Control+l";
 	kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+h";
