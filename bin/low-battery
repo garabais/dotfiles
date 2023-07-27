@@ -1,12 +1,14 @@
 #!/bin/sh
 
-battery="BAT0"
+battery="BAT1"
 b_path="/sys/class/power_supply/$battery" 
 if [ -e $b_path ]; then 
 	perc=$(cat "$b_path/capacity")
 	status=$(cat "$b_path/status")
 
-	if [ $status = "Discharging" ]; then
+	echo "Battery $battery at $perc $status"
+
+	if [ "$status" = "Discharging" ]; then
 		if [ $perc -le 20 ]; then
 			if [ $perc -gt 15 ]; then
 				notify-send "Low Battery" "$perc%" --icon=battery-low -u normal
