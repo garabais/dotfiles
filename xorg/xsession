@@ -1,15 +1,22 @@
 #!/bin/sh
 
+# Lauch dwmblocks
+dwmblocks &
+
 # Set the default cursor for the xsession
 xsetroot -cursor_name left_ptr &
 
+# xset s off -dpms
+ xset -dpms
+# xrandr --output eDP-1 --mode 1920x1080 --rate 60 
+# xrandr --output DP-2 --mode 1920x1080 --output HDMI-0 --mode 1920x1080 --right-of DP-2 --primary 
+#xrandr --output eDP-1 --mode 1920x1080 --rate 60 --output DP-1 --primary --mode 1920x1080 --right-of eDP-1 &
+# autorandr --change
+
 # Recover wallpaper set with feh if exists
 if [[ -f "$HOME/.fehbg" ]]; then
-	~/.fehbg 
+	~/.fehbg  &
 fi
-
-# Lauch dwmblocks
-dwmblocks &
 
 # Launch compositor for transparency
 picom &
@@ -24,4 +31,5 @@ xset -b &
 xss-lock -l -- betterlockscreen --lock dim &
 
 # Polkit agent for virt-manager, gparted, etc. (polkit-gnome package on Arch)
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
