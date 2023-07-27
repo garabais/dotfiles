@@ -8,7 +8,7 @@
 
 
 # Show line numbers and Git modifications (but no grid and the header)
---style="numbers,changes"
+--style="changes"
 
 # Enable this to use italic text on the terminal. This is not supported on all
 # terminal emulators (like tmux, by default):
